@@ -23,6 +23,17 @@
       height: 100vh;
       border: 0;
     }
+
+    .genially-controls-cover {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      width: 120px;
+      height: 75px;
+      background: #315f4b;
+      z-index: 9999;
+      pointer-events: auto;
+    }
   </style>
 </head>
 
@@ -30,8 +41,9 @@
   <iframe
     src="https://view.genially.com/6a8c092ea417b92cd864e45f"
     title="Adventskalender"
-    allowfullscreen
     scrolling="yes">
   </iframe>
+
+  <div class="genially-controls-cover"></div>
 </body>
 </html>
