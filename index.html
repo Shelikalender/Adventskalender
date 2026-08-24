@@ -3,75 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Adventskalender</title>
 
   <style>
-    html, body {
+    html,
+    body {
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100%;
-      overflow: hidden;
+      min-height: 100%;
       background: #315f4b;
     }
 
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      overflow-x: hidden;
     }
 
-    .calendar-wrapper {
+    .container-wrapper-genially {
       position: relative;
-
-      /* Originalformat: 360 x 1200 */
-      aspect-ratio: 360 / 1200;
-
-      /* So groß wie möglich, ohne abgeschnitten zu werden */
-      height: 100vh;
-      max-width: 100vw;
-
-      overflow: hidden;
-    }
-
-    .calendar-wrapper iframe {
-      display: block;
       width: 100%;
-      height: 100%;
-      border: 0;
+      min-height: 100vh;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
     }
 
-    .controls-cover {
+    .genially-embed {
+      margin: 0 auto;
+      position: relative;
+      width: 100%;
+      height: auto;
+    }
+
+    .loader-genially {
       position: absolute;
-
-      /* Feinjustierung hier möglich */
-      right: 0;
-      bottom: 0;
-
-      /* Größe relativ zur 360px breiten Originalseite */
-      width: 24%;
-      height: 4.5%;
-
-      background: #315f4b;
-      z-index: 9999;
-      pointer-events: auto;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      z-index: 1;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="calendar-wrapper">
+  <div class="container-wrapper-genially">
 
-    <iframe
-      src="https://view.genially.com/6a8c092ea417b92cd864e45f"
-      title="Adventskalender"
-      scrolling="yes">
-    </iframe>
+    <video
+      class="loader-genially"
+      autoplay
+      loop
+      playsinline
+      muted>
 
-    <div class="controls-cover"></div>
+      <source
+        src="https://static.genially.com/resources/loader-default-rebranding.mp4"
+        type="video/mp4">
+
+    </video>
+
+    <div
+      id="6a8c092ea417b92cd864e45f"
+      class="genially-embed">
+    </div>
 
   </div>
+
+  <script>
+    (function (d) {
+      var js,
+          id = "genially-embed-js",
+          ref = d.getElementsByTagName("script")[0];
+
+      if (d.getElementById(id)) {
+        return;
+      }
+
+      js = d.createElement("script");
+      js.id = id;
+      js.async = true;
+      js.src = "https://view.genially.com/static/embed/embed.js";
+
+      ref.parentNode.insertBefore(js, ref);
+    }(document));
+  </script>
 
 </body>
 </html>
