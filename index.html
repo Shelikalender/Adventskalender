@@ -23,59 +23,14 @@
       height: 100vh;
       border: 0;
     }
-
-    /*
-      Unsichtbare Fläche über dem Share-Button.
-      Sie liegt über Genially und fängt Klicks/Taps ab.
-    */
-    .share-blocker {
-      position: fixed;
-      z-index: 999999;
-      background: transparent;
-      cursor: default;
-
-      /* Desktop */
-      width: 55px;
-      height: 65px;
-
-      /*
-        Genially ist auf großen Displays zentriert.
-        Der Share-Button sitzt links vom Fullscreen-Button
-        am rechten Rand des eingebetteten Kalenders.
-      */
-      left: calc(50% + 175px);
-      bottom: 0;
-    }
-
-    /*
-      Smartphone:
-      Genially nimmt praktisch die gesamte Breite ein.
-    */
-    @media (max-width: 600px) {
-      .share-blocker {
-        width: 55px;
-        height: 65px;
-        left: auto;
-        right: 55px;
-        bottom: 0;
-      }
-    }
   </style>
 </head>
 
 <body>
-
   <iframe
     src="https://view.genially.com/6a8c092ea417b92cd864e45f"
     title="Adventskalender"
-    allowfullscreen
     scrolling="yes">
   </iframe>
-
-  <div
-    class="share-blocker"
-    aria-hidden="true">
-  </div>
-
 </body>
 </html>
